@@ -6508,3 +6508,12 @@ CONFIG_CORESIGHT_TGU=y
 #
 CONFIG_RMNET_PERF=y
 CONFIG_RMNET_SHS=y
+<<<<<<< HEAD
+=======
+
+# extras
+
+CONFIG_CPU_FREQ_GOV_SCHEDHORIZON=y
+CONFIG_IOSCHED_ZEN=y
+# CONFIG_DEFAULT_ZEN is not set
+>>>>>>> bfb109f4f32a (defconfig: enable zen scheduler)
