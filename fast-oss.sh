@@ -1,10 +1,11 @@
 #!/bin/bash
+#### UNIFIED BUILDS ####
 export KERNEL_DIR="/mnt/Android/dawfuk-oos-stock"
 export KBUILD_OUTPUT="/mnt/Android/dawfuk-oos-stock/out"
-export ZIP_DIR="/mnt/Android/AnyKernel3-oos"
+export ZIP_DIR="/mnt/Android/AnyKernel3-oss"
 export ZIP_OUT_DIR="/mnt/Android/Out_Zips"
-rm -rfv /mnt/Android/AnyKernel3-oos/Image.gz
-rm -rfv /mnt/Android/AnyKernel3-oos/dtbo.img
+rm -rfv /mnt/Android/AnyKernel3-oss/Image.gz
+rm -rfv /mnt/Android/AnyKernel3-oss/dtbo.img
 make O=out clean
 make O=out mrproper
 rm -rfv out
@@ -12,10 +13,10 @@ export PATH="/mnt/Android/toolchains/neutron-clang/bin:$PATH"
 export USE_CCACHE=1
 export CLANG_PATH="/mnt/Android/toolchains/neutron-clang/bin/clang"
 export ARCH=arm64
-export VARIANT="Aurora-OOS-R10"
+export VARIANT="aurora-oss-r01"
 export HASH=`git rev-parse --short=4 HEAD`
 export KERNEL_ZIP="$VARIANT-$HASH"
-export LOCALVERSION="~Aurora-OOS-R10"
+export LOCALVERSION="~'$VARIANT-$HASH'"
 export CROSS_COMPILE=/mnt/Android/toolchains/gcc-linaro-12.2.1-2023.01-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
 export CROSS_COMPILE_ARM32=/mnt/Android/toolchains/gcc-linaro-12.2.1-2023.01_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
 export KBUILD_COMPILER_STRING=$($CLANG_PATH --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')
